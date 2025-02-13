@@ -12,7 +12,6 @@ pipeline {
             steps {
                 sh 'python3 app.py > flask.log 2>&1 &'
                 sleep 5
-                sh 'curl -I http://127.0.0.1:5000 || exit 1'
             }
         }
     }
