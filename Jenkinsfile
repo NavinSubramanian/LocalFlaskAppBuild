@@ -13,8 +13,12 @@ pipeline {
                 sh 'python3 app.py > flask.log 2>&1 &'
                 sleep 5
                 sh 'cat flask.log'
-                sh '....Flask App was Run....'
+                sh 'echo "....Flask App was Run...."'
             }
         }
+    }
+    triggers {
+        pollSCM('H/5 * * * *')
+        cron('H * * * *')
     }
 }
