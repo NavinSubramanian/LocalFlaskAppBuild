@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                sh 'pip3 install -r requirements.txt'
+                sh 'apt-get install -y python3-flask'
             }
         }
         stage('Run Flask App') {
