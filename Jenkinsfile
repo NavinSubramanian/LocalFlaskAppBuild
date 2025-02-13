@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                sh 'apt-get install -y python3-flask'
+                sh 'sudo apt-get update'
+                sh 'sudo apt-get upgrade'
+                sh 'sudo apt-get install -y python3-flask'
             }
         }
         stage('Run Flask App') {
